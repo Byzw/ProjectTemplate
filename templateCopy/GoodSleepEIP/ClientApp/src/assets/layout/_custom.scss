@@ -1,0 +1,123 @@
+.layout-menu-button {
+  border-radius: 50% !important;
+}
+
+
+[class^="ag-theme"] {
+  --ag-font-size: 14px !important;
+}
+
+.ag-paging-panel {
+  justify-content: center !important;
+}
+
+@media (max-width: 767px) {
+
+  .ag-paging-page-size,
+  .ag-paging-row-summary-panel {
+    display: none;
+  }
+
+  input,
+  textarea,
+  select {
+    /* 針對手機和平板，輸入時不自動放大畫面 */
+    font-size: 16px !important;
+  }
+}
+
+.loading-spinner-inline {
+  display: inline-block;
+  /* 讓 spinner 成為行內塊元素，方便在文字或按鈕旁邊顯示 */
+  border: 2px solid #f3f3f3;
+  /* 外圍的灰色邊框 */
+  border-top: 2px solid #3498db;
+  /* 上邊框的顏色 */
+  border-radius: 50%;
+  /* 圓形 */
+  width: 16px;
+  /* 調整大小適應按鈕或文字框 */
+  height: 16px;
+  animation: loading-spin 1s linear infinite;
+  /* 旋轉動畫 */
+}
+
+.loading-spinner {
+  position: absolute;
+  /* 絕對定位將其固定在右上角 */
+  top: 32%;
+  right: 10rem;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: loading-spin 1s linear infinite;
+}
+
+@media screen and (max-width: 991px) {
+  .loading-spinner {
+    right: 4.5rem;
+    /* 與行動裝置寬度響應一起動作 */
+  }
+}
+
+.loading-disabled button,
+.loading-disabled input[type="button"],
+.loading-disabled input[type="submit"],
+.loading-disabled input[type="reset"] {
+  pointer-events: none !important;
+  /* 禁用所有按鈕 */
+  opacity: 0.6 !important;
+  /* 選擇性：讓禁用的按鈕看起來半透明 */
+}
+
+/* 有質感一點的 ScrollBar */
+.custom-scroll {
+  overflow-y: auto;
+  position: relative;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 8px;
+  /* 增加寬度，讓圓角效果更明顯 */
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 12px;
+  /* 圓角 */
+}
+
+.app-dark .custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 12px;
+  /* 圓角 */
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #acacaf;
+  border-radius: 12px;
+  /* 圓角 */
+  transition: background-color 0.2s linear, width 0.2s ease-in-out;
+}
+
+.app-dark .custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  /* 半透明白 */
+  border-radius: 12px;
+  transition: background 0.3s ease-in-out;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover,
+.custom-scroll::-webkit-scrollbar-thumb:active {
+  background-color: #888ea8;
+  cursor: pointer;
+}
+
+.app-dark .custom-scroll::-webkit-scrollbar-thumb:hover,
+.custom-scroll::-webkit-scrollbar-thumb:active {
+  background: rgba(255, 255, 255, 0.6);
+  /* 滑鼠移上去變亮 */
+  cursor: pointer;
+}

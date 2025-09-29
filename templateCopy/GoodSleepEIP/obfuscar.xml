@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Obfuscator>
+    <Var name="InPath" value="./bin/Release/net8.0" />
+    <Var name="OutPath" value="./bin/Release/net8.0/Obfuscated" />
+    <Var name="KeepPublicApi" value="true" />
+    <Var name="HidePrivateApi" value="true" />
+    <Var name="ReuseNames" value="true" />
+    <Var name="UseUnicodeNames" value="true" />
+    <Var name="HideStrings" value="true" />
+    <Var name="OptimizeMethods" value="true" />
+    <Var name="SuppressIldasm" value="true" />
+
+    <!-- 指定要混淆的主要組件 -->
+    <AssemblySearchPath path="./bin/Release/net8.0" />
+    <Module file="$(InPath)/GoodSleepEIP.dll" />
+
+    <!-- 保護所有 Controller 不被混淆，確保 API 正常運作 -->
+    <SkipType name="GoodSleepEIP.Controllers.*" />
+    <SkipType name="GoodSleepEIP.Models.*" />
+    <SkipType name="GoodSleepEIP.Swagger.*" />
+
+    <!-- 保護 Program 類別的公開方法不被混淆 -->
+    <SkipMethod name="GoodSleepEIP.Program::Main" />
+
+    <!-- 保護所有標記了特定屬性的類別和方法 -->
+    <SkipType name="*" feature="serialization" />
+    <SkipType name="*" attrib="System.Runtime.Serialization.DataContractAttribute" />
+    <SkipType name="*" attrib="System.SerializableAttribute" />
+    <SkipMethod name="*" attrib="System.Web.Services.WebMethodAttribute" />
+    <SkipMethod name="*" attrib="System.Runtime.Serialization.OnDeserializingAttribute" />
+    <SkipMethod name="*" attrib="System.Runtime.Serialization.OnDeserializedAttribute" />
+    <SkipMethod name="*" attrib="System.Runtime.Serialization.OnSerializingAttribute" />
+    <SkipMethod name="*" attrib="System.Runtime.Serialization.OnSerializedAttribute" />
+
+    <!-- 只混淆 LicenseValidation 相關的類別 -->
+    <!-- 其他所有類別都跳過混淆 -->
+    <SkipType name="GoodSleepEIP.*" />
+
+    <!-- 但是允許混淆 LicenseValidation 命名空間下的類別 -->
+    <SkipType name="GoodSleepEIP.LicenseValidation.*" skip="false" />
+</Obfuscator>

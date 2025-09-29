@@ -1,0 +1,22 @@
+services:
+  web:
+    build:
+      context: ./GoodSleepEIP
+      dockerfile: Dockerfile
+    container_name: GoodSleepEIP-web
+    hostname: GoodSleepEIP-server # 容器 hostname（設定固定值用於硬體指紋）
+    ports:
+      - "1234:5566"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - WHVN_INSTANCE_ID=PROD-SERVER-001 # 環境變數中的自定義辨識，用於硬體指紋
+      # 如需資料庫連線字串請自行調整
+      # - ConnectionStrings__DefaultConnection=Server=10.10.10.120;Database=GoodSleepEIP;User Id=sa;Password=Kk12345678;
+    volumes:
+      - ./GoodSleepEIP/publish:/app
+      - ./dataprotection:/root/.aspnet/DataProtection-Keys
+      # 硬體指紋所需的宿主機資訊掛載（只讀）
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /etc/machine-id:/host/etc/machine-id:ro
+    restart: unless-stopped

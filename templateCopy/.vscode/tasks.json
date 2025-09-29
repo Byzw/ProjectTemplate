@@ -1,0 +1,51 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+	  {
+		"label": "build",
+		"command": "dotnet",
+		"type": "process",
+		"args": [
+		  "build",
+		  "${workspaceFolder}/GoodSleepEIP/GoodSleepEIP.csproj" // 指向 GoodSleepEIP 的專案檔案
+		],
+		"problemMatcher": "$msCompile",
+		"group": {
+		  "kind": "build",
+		  "isDefault": true
+		}
+	  },
+	  {
+		"label": "build MigrationService",
+		"command": "dotnet",
+		"type": "process",
+		"args": [
+		  "build",
+		  "${workspaceFolder}/MigrationService/MigrationService.csproj" // 指向 MigrationService 的專案檔案
+		],
+		"problemMatcher": "$msCompile",
+		"group": "build"
+	  },
+	  {
+		"label": "clean GoodSleepEIP",
+		"command": "dotnet",
+		"type": "process",
+		"args": [
+		  "clean",
+		  "${workspaceFolder}/GoodSleepEIP/GoodSleepEIP.csproj"
+		],
+		"problemMatcher": []
+	  },
+	  {
+		"label": "clean MigrationService",
+		"command": "dotnet",
+		"type": "process",
+		"args": [
+		  "clean",
+		  "${workspaceFolder}/MigrationService/MigrationService.csproj"
+		],
+		"problemMatcher": []
+	  }
+	]
+  }
+  

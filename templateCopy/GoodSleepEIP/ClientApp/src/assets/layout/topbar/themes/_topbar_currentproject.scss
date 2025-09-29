@@ -1,0 +1,15 @@
+.layout-topbar-currentproject {
+    --topbar-bg: #f8fafc;
+    --topbar-bg-dark: #000000;
+    --topbar-menu-button-bg: transparent;
+    --topbar-menu-button-text-color: #1a1a1a;
+    --topbar-item-text-color: #1a1a1a;
+}
+/* 當 `app-dark` 啟用時(暗色風) */
+.app-dark .layout-topbar-currentproject {
+    --topbar-bg: #1a1a1a; /* 改為暗色背景 */
+    --topbar-bg-dark: #333333; /* 深色模式的頂部背景 */
+    --topbar-menu-button-bg: transparent; /* 透明但稍微顯示 */
+    --topbar-menu-button-text-color: #ffffff; /* 文字變白 */
+    --topbar-item-text-color: #ffffff;
+}

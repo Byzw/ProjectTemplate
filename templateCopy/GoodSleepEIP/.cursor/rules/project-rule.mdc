@@ -1,0 +1,53 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Rules
+
+## Frontend
+
+### Framework
+- **Vue 3**
+  - Use Composition API for component logic (preferred over Options API).
+  - Follow Vue 3 Style Guide: https://vuejs.org/style-guide/
+
+### UI Components
+- **PrimeVue**
+  - Use as the primary UI component library.
+  - Customize themes via PrimeVue's Theme Designer or SCSS overrides.
+  - Reference: https://primevue.org/
+
+### Styling
+- **SCSS 3**
+  - Use SCSS for modular and maintainable styles.
+  - Organize styles in `/src/assets/scss/` with a main `styles.scss` entry.
+  - Follow BEM methodology for naming where applicable.
+- **Tailwind CSS**
+  - Use for utility-first styling and rapid prototyping.
+  - Configure in `tailwind.config.js` for custom themes aligned with PrimeVue.
+  - Reference: https://tailwindcss.com/docs/
+
+### Data Grid
+- **AG-Grid**
+  - Use for advanced table functionalities (sorting, filtering, pagination).
+  - Prefer Vue 3 integration: https://www.ag-grid.com/vue-data-grid/
+  - Store grid configurations in dedicated modules (e.g., `/src/components/grid-config/`).
+  - Use TypeScript for type safety (optional but recommended).
+  - Lint with ESLint and Prettier, configured via `.eslintrc.js` and `.prettierrc`.
+
+## Backend
+
+### Framework
+- **.NET 8 with C#**
+- Use ASP.NET Core for RESTful API development.
+
+### Data Access
+- **DapperHelper**
+- Use the provided `DapperHelper` package for all database interactions.
+
+## Database
+- MS SQL Server 2022
+
+## 特別要求
+apiServices.schemas.ts(資料模型) 與 apiServices.ts(呼叫方法) 是用工具 Orval 針對後端的 OpenAPI json (for Swagger)自動產生的，不可做任意修改

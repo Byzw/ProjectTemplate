@@ -1,0 +1,39 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "執行 WebAPI 後端",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/GoodSleepEIP/bin/Debug/net8.0/GoodSleepEIP.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/GoodSleepEIP",
+            "stopAtEntry": false,
+            // "serverReadyAction": {
+            //     "action": "openExternally",
+            //     "pattern": "Now listening on:",
+            //     "uriFormat": "http://localhost:5566/swagger/index.html"
+            // },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/GoodSleepEIP/Views"
+            }
+        },
+        {
+            "name": "執行服務 MigrationService",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/MigrationService/bin/Debug/net8.0/MigrationService.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/MigrationService",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        }
+    ]
+}
