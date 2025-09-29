@@ -363,8 +363,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-GoodSleepEIP/Attachment/*
-GoodSleepEIP/BackupTmp/*
-GoodSleepEIP/ClientApp/dist/*
-GoodSleepEIP/ClientApp/.vite
-/GoodSleepEIP/Models/DbModel.cs
+
