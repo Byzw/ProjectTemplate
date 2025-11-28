@@ -367,4 +367,4 @@ GoodSleepEIP/Attachment/*
 GoodSleepEIP/BackupTmp/*
 GoodSleepEIP/ClientApp/dist/*
 GoodSleepEIP/ClientApp/.vite
-/GoodSleepEIP/Models/DbModel.cs
+
